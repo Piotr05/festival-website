@@ -1,0 +1,46 @@
+@use './variables.scss';
+
+.btn {
+    background-color: variables.$accent-color;
+    padding: 7px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: variables.$white;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 4px 0px 0px rgba(0, 69, 187, 1);
+    -moz-box-shadow: 0px 4px 0px 0px rgba(0, 69, 187, 1);
+    box-shadow: 0px 4px 0px 0px rgba(0, 69, 187, 1);
+    animation: show-btn 1s ease-in-out;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 60px;
+        background-color: rgba(57, 113, 204, .5);
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        transform: translateX(200px) rotate(20deg);
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &::before {
+            transform: translateX(-10px) rotate(20deg);
+            transition: transform .75s ease-out;
+            z-index: 1;
+        }
+    }
+}
